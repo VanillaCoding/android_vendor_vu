@@ -149,6 +149,10 @@ PRODUCT_PACKAGES += \
     CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator
+    
+# Custom CM packages
+PRODUCT_PACKAGES += \
+    VUPapers
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
