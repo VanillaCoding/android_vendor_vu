@@ -39,13 +39,13 @@ ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/vu/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/vu/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/vu/prebuilt/common/bin/50-crdroid.sh:system/addon.d/50-crdroid.sh \
+    vendor/vu/prebuilt/common/bin/50-vu.sh:system/addon.d/50-crdroid.sh \
     vendor/vu/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/crdroid/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/vu/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -60,7 +60,7 @@ endif
 
 # VanillaUnicorn-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/vu/prebuilt/common/etc/init.local.rc:root/init.crdroid.rc
+    vendor/vu/prebuilt/common/etc/init.local.rc:root/init.vu.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -121,7 +121,7 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Extra tools in crDroid
+# Extra tools in VU
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -237,7 +237,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
 
-# CyanogenMod Platform Internal used in crDroid
+# CyanogenMod Platform Internal used in VU
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.rev=$(CM_PLATFORM_REV)
 
