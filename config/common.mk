@@ -156,6 +156,10 @@ PRODUCT_PACKAGES += \
     CMHome \
     CyanogenSetupWizard \
     CMSettingsProvider
+    
+# Custom CM packages
+PRODUCT_PACKAGES += \
+    VUPapers
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
