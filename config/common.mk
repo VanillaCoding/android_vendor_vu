@@ -196,13 +196,13 @@ VU_VERSION_MAJOR = 2
 VU_VERSION_MINOR = 0
 
 # Release
-ifeq ($(CRDROID_RELEASE),true)
+ifeq ($(VU_RELEASE),true)
     VU_VERSION := vu-$(VU_VERSION_MAJOR).$(VU_VERSION_MINOR)-$MILESTONE-$(shell date -u +%Y%m%d)-$(VU_BUILD)
 else
     VU_VERSION := vu-$(VU_VERSION_MAJOR).$(VU_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(VU_BUILD)
 endif
 
-CRDROID_DISPLAY_VERSION := $(VU_VERSION)
+VU_DISPLAY_VERSION := $(VU_VERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.vu.version=$(VU_VERSION) \
@@ -233,7 +233,7 @@ ifndef CM_PLATFORM_REV
   CM_PLATFORM_REV := 0
 endif
 
-# CyanogenMod Platform SDK Version used in crDroid
+# CyanogenMod Platform SDK Version used in VU
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
 
