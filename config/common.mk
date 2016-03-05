@@ -83,7 +83,7 @@ include vendor/vu/config/themes_common.mk
 
 # Live lockscreen
 PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
+    vendor/vu/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
 
 # Required VanillaUnicorn packages
 PRODUCT_PACKAGES += \
