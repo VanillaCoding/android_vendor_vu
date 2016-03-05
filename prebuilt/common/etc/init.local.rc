@@ -22,7 +22,8 @@ on init
     chmod 0220 /sys/fs/cgroup/bfqio/rt-display/cgroup.event_control
 
 on post-fs-data
-    mkdir /data/.ssh 0750 root shell
+    mkdir /data/ssh 0750 root shell
+    mkdir /data/ssh/empty 0600 root shell
     mkdir /cache/recovery 0770 system cache
 
     # Run sysinit
@@ -62,6 +63,8 @@ on boot
     chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load
     chown system system /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
     chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
 
     # ondemand governor
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/boostfreq
@@ -139,6 +142,9 @@ service bugreport /system/bin/dumpstate -d -p -B \
     keycodes 114 115 116
 
 # adb over network
+on property:adb.network.port=*
+    setprop service.adb.tcp.port ${adb.network.port}
+
 on property:service.adb.tcp.port=5555
     stop adbd
     start adbd

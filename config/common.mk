@@ -81,6 +81,10 @@ PRODUCT_COPY_FILES += \
 # T-Mobile theme engine
 include vendor/vu/config/themes_common.mk
 
+# Live lockscreen
+PRODUCT_COPY_FILES += \
+    vendor/cm/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
+
 # Required VanillaUnicorn packages
 PRODUCT_PACKAGES += \
     Development \
@@ -128,7 +132,6 @@ PRODUCT_PACKAGES += \
 # Extra tools in VU
 PRODUCT_PACKAGES += \
     libsepol \
-    e2fsck \
     mke2fs \
     tune2fs \
     bash \
@@ -144,6 +147,9 @@ PRODUCT_PACKAGES += \
     fibmap.f2fs \
     ntfsfix \
     ntfs-3g \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs \
     gdbserver \
     micro_bench \
     oprofiled \
@@ -217,9 +223,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 -include vendor/vu-priv/keys/keys.mk
 
-# by default, do not update the recovery with system updates
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
-
 ifndef CM_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
   # the set of APIs and functionality available in the platform.  It
@@ -227,7 +230,7 @@ ifndef CM_PLATFORM_SDK_VERSION
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  CM_PLATFORM_SDK_VERSION := 4
+  CM_PLATFORM_SDK_VERSION := 5
 endif
 
 ifndef CM_PLATFORM_REV
