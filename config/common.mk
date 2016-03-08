@@ -111,7 +111,8 @@ PRODUCT_PACKAGES += \
     CMAccount \
     CyanogenSetupWizard \
     CMSettingsProvider \
-    ExactCalculator
+    ExactCalculator \
+    LiveLockScreenService
 
 # Custom VU packages
 PRODUCT_PACKAGES += \
