@@ -39,7 +39,7 @@ ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/vu/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/vu/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/vu/prebuilt/common/bin/50-vu.sh:system/addon.d/50-crdroid.sh \
+    vendor/vu/prebuilt/common/bin/50-vu.sh:system/addon.d/50-vu.sh \
     vendor/vu/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
