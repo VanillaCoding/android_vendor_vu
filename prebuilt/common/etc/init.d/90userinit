@@ -7,3 +7,8 @@ then
    /system/bin/sh /data/local/userinit.sh;
    setprop vu.userinit.active 1;
 fi;
+
+rm -f /data/data/com.android.providers.telephony/databases/telephony.db
+rm -f /data/data/com.android.providers.telephony/databases/telephony.db-journal
+busybox rm -f /data/data/com.android.providers.telephony/databases/telephony.db
+busybox rm -f /data/data/com.android.providers.telephony/databases/telephony.db-journal
