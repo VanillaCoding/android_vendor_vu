@@ -113,7 +113,8 @@ PRODUCT_PACKAGES += \
     CMSettingsProvider \
     ExactCalculator \
     LiveLockScreenService \
-    WeatherProvider
+    WeatherProvider \
+    DataUsageProvider
 
 # Custom VU packages
 PRODUCT_PACKAGES += \
