@@ -35,13 +35,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Backup Tool
-ifeq (,$(filter true, $(CYNGN_TARGET) $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/vu/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/vu/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/vu/prebuilt/common/bin/50-vu.sh:system/addon.d/50-vu.sh \
     vendor/vu/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
