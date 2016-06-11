@@ -1,10 +1,10 @@
 # Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common.mk)
+$(call inherit-product, vendor/vu/config/common.mk)
 
 PRODUCT_SIZE := mini
 
 # Include CM audio files
-include vendor/cm/config/cm_audio.mk
+include vendor/vu/config/cm_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
