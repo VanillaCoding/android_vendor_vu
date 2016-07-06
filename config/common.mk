@@ -41,6 +41,10 @@ PRODUCT_COPY_FILES += \
     vendor/vu/prebuilt/common/bin/50-vu.sh:system/addon.d/50-vu.sh \
     vendor/vu/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/vu/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
     vendor/vu/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
